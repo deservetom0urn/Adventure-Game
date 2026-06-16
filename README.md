@@ -1,6 +1,6 @@
-# 2D Top-Down Adventure Game
+# 2D Adventure Game
 
-This is a simple 2D top-down adventure game built in Unity. I created this project to practice player movement, user input, and C# scripting while learning how Unity's component system works.
+This is a simple 2D adventure game built in Unity. I created this project to practice player movement, user input, and C# scripting while learning how Unity's component system works.
 
 ## 🛠️ What I Built
 
