@@ -1,15 +1,30 @@
-# 2D Top-Down Adventure Game — Player Mechanics Portfolio
+# 2D Top-Down Adventure Game
 
-This repository contains the foundational gameplay engineering for a 2D Top-Down Adventure game built within the Unity ecosystem. The project serves as a demonstration of my core competencies in C# scripting, vector mathematics, and Unity's component-based architecture.
+This is a simple 2D top-down adventure game built in Unity. I created this project to practice player movement, user input, and C# scripting while learning how Unity's component system works.
 
-### 🛠️ Technical Breakdown & Architectural Patterns
+## 🛠️ What I Built
 
-The core mechanics are driven by `PlayerController.cs`, which encapsulates the input processing and kinematic translation of the player avatar:
+The main gameplay is controlled by the `PlayerController.cs` script.
 
-* **Dynamic Multi-Directional Input Mapping:** The script samples input via Unity’s `Input.GetAxis` API for both the `"Horizontal"` and `"Vertical"` orthogonal axes. This implementation ensures native, out-of-the-box compatibility with cross-platform input schemes, including standard WASD keys, Arrow keys, and hardware gamepad D-pads.
-* **Frame-Rate Independence via Delta Timing:** To mitigate performance discrepancies across varying hardware specifications, player displacement is scaled using `Time.deltaTime`. This mathematical normalization guarantees that the player's velocity remains absolutely uniform, preventing gameplay anomalies whether the execution environment runs at 30 FPS or high-refresh-rate 144+ FPS.
-* **State Mutation via Transform Manipulation:** The script executes a safe, atomic update pattern. It retrieves the entity's spatial data into a temporary stack-allocated `Vector2` struct, computes the velocity offsets, and explicitly commits the mutated coordinates back to Unity's `transform.position`.
+### Player Movement
 
-### 📋 Implementation & Inspector Configuration
+* Allows the player to move in four directions using the keyboard (WASD or Arrow Keys).
+* Uses Unity's `Input.GetAxis()` to detect player input.
+* Supports smooth movement that feels responsive during gameplay.
 
-The script is engineered as a reusable component designed to be attached directly to any 2D Player GameObject. It exposes a serialized `moveSpeed` field (`public float`), granting developers the flexibility to calibrate and fine-tune movement physics dynamically from the Unity Inspector panel without mutating the underlying codebase.
+### Consistent Movement Speed
+
+* Uses `Time.deltaTime` so the player's movement stays the same on different devices and frame rates.
+* This keeps the gameplay smooth whether the game is running at a low or high FPS.
+
+### Position Updates
+
+* Updates the player's position every frame based on the movement input.
+* Uses Unity's `transform.position` to move the character around the map.
+
+## 📋 Features
+
+* Built with **Unity** and **C#**
+* Four-direction player movement
+* Frame rate independent movement using `Time.deltaTime`
+* Adjustable movement speed through the Unity Inspector using the `moveSpeed` variable
